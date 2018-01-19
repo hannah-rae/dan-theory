@@ -132,8 +132,9 @@ def plot_vary_depth(spec_lookup,
         params = (cl, h2o_top, d_top, h2o_bott, d_bott, val, alt)
         xs = spec_lookup[params][:,0]/100
         xlog = [log10(x) for x in xs[:-1]] # last value is 0
+        print xlog
         ax.plot(xlog, (spec_lookup[params][:,3]-spec_lookup[params][:,1])[:-1], z, 'b-')
-        ax.set_xlabel('time bin (s)')
+        ax.set_xlabel('time bin')
         ax.set_ylabel('thermal neutron counts (ctn-cetn)')
         ax.set_zlabel('depth (m)')
         
